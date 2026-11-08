@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>QR</title>
+</head>
+<body style="text-align:center;font-family:sans-serif">
+<h3>ساخت QR</h3>
+<input id="t" placeholder="متن یا لینک" style="width:80%;padding:10px">
+<br><br>
+<button onclick="make()" style="padding:10px 20px">بساز</button>
+<div id="qr" style="margin:20px auto;width:256px"></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script>
+function make(){
+  var box = document.getElementById("qr");
+  box.innerHTML = "";
+  new QRCode(box, {text: document.getElementById("t").value, width: 256, height: 256});
+}
+</script>
+</body>
+</html>
